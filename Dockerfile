@@ -8,6 +8,8 @@ MAINTAINER Geoffroy Lesage
 RUN export DEBIAN_FRONTEND=noninteractive
 RUN apt-get -y install mysql-client libmysql-ruby libmysqlclient-dev
 
+RUN gem install bundle
+RUN gem install rails
 RUN gem install mysql2
 RUN gem install rails-api
 
