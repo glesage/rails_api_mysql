@@ -19,7 +19,7 @@ This repository contains **Dockerfile** of a Rails App for API & [MySql](http://
 
 ### Usage
 
-    docker run -t -i -p 80:80 glesage/rails-api-mysql
+    docker run -i -t -p 80:80 -v /home/me/myapp:/webapp glesage/rails-api-mysql
 
 
 ### Stack

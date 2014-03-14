@@ -5,6 +5,9 @@
 FROM glesage/nodejs-rails4
 MAINTAINER Geoffroy Lesage
 
+RUN gem install rails
+RUN gem install rails-api
+
 RUN export DEBIAN_FRONTEND=noninteractive
 sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password password root'
 sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password root'
