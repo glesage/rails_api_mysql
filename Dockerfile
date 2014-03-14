@@ -5,13 +5,14 @@
 FROM glesage/ruby211
 MAINTAINER Geoffroy Lesage
 
-RUN gem install rails
-RUN gem install rails-api
-
 RUN export DEBIAN_FRONTEND=noninteractive
 sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password password root'
 sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password root'
-sudo apt-get -y install mysql-server mysql-client libmysqlclient-dev
+sudo apt-get -y install mysql-client libmysql-ruby libmysqlclient-dev
+
+RUN gem install rails
+RUN gem install mysql2
+RUN gem install rails-api
 
 RUN mkdir /home/app/
 
