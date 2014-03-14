@@ -6,7 +6,7 @@ FROM glesage/ruby211
 MAINTAINER Geoffroy Lesage
 
 RUN export DEBIAN_FRONTEND=noninteractive
-RUN apt-get -y install mysql-client mysql-devel libmysql-ruby libmysqlclient-dev
+RUN apt-get -y install mysql-client libmysql-ruby libmysqlclient-dev
 
 RUN gem install mysql2
 RUN gem install rails-api
