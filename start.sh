@@ -10,6 +10,8 @@ chown -R www-data $DATADIR
 
 cd $DATADIR
 
+mysqladmin -uroot -proot create dev
+
 bundle install
 rake db:create
 rake db:migrate
