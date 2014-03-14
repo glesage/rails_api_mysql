@@ -2,7 +2,7 @@
 #
 # VERSION               0.1
 
-FROM glesage/nodejs-rails4
+FROM glesage/ruby211
 MAINTAINER Geoffroy Lesage
 
 RUN gem install rails
