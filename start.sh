@@ -10,10 +10,13 @@ chown -R www-data $DATADIR
 
 cd $DATADIR
 
+mysqladmin -uroot -proot drop test
+
 mysqladmin -uroot -proot create dev
+mysqladmin -uroot -proot create tets
+mysqladmin -uroot -proot create prod
 
 bundle install
 rake db:create
 rake db:migrate
-rails s -d -p 80
-/bin/bash
+rails s
