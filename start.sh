@@ -10,7 +10,7 @@ chown -R www-data $DATADIR
 
 cd $DATADIR
 
-mysqladmin -uroot -proot drop test
+echo 'y' | mysqladmin -uroot -proot drop test
 
 mysqladmin -uroot -proot create dev
 mysqladmin -uroot -proot create tets
