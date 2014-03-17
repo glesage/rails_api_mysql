@@ -12,8 +12,14 @@ RUN export DEBIAN_FRONTEND=noninteractive
 #
 # MySql
 #
-RUN apt-get -y install mysql-client-5.5 mysql-server-5.5
+RUN echo mysql-server mysql-server/root_password password root | sudo debconf-set-selections
+RUN echo mysql-server mysql-server/root_password_again password root | sudo debconf-set-selections
+RUN apt-get -y install mysql-server libmysqlclient-dev 
 
+#
+# Sqlite
+#
+RUN apt-get install sqlite3 libsqlite3-dev
 
 # Decouple webapp from container
 VOLUME ["/webapp"]
