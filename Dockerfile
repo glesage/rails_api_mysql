@@ -1,5 +1,5 @@
 # Rails 4 app with Ruby 2.1.1 & NodeJS
-# (+ mysql for adapters)
+# (+ mysql & Sqlite for adapters)
 #
 # VERSION               0.1
 

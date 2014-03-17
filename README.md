@@ -1,7 +1,7 @@
 Rails App with Ruby 2.1.1 & NodeJS
 ==================================
 
-### (+ mysql for adapters)
+### (+ mysql & Sqlite for adapters)
 
 This Dockerfile is published to the public [Docker Registry](https://index.docker.io/).
 
