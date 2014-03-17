@@ -19,7 +19,7 @@ RUN apt-get -y install mysql-server libmysqlclient-dev
 #
 # Sqlite
 #
-RUN apt-get install sqlite3 libsqlite3-dev
+RUN apt-get -y install sqlite3 libsqlite3-dev
 
 # Decouple webapp from container
 VOLUME ["/webapp"]
