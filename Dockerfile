@@ -1,28 +1,26 @@
-# Node.js & Rails 4 environment
+# Rails 4 app with Ruby 2.1.1 & NodeJS
+# (+ mysql for adapters)
 #
 # VERSION               0.1
 
-FROM glesage/ruby211
+FROM glesage/nodejs-rails4
 MAINTAINER Geoffroy Lesage
 
+
 RUN export DEBIAN_FRONTEND=noninteractive
-RUN apt-get update
-RUN echo mysql-server mysql-server/root_password password root | debconf-set-selections;\
-  	echo mysql-server mysql-server/root_password_again password root | debconf-set-selections;\
-  	apt-get install -y mysql-server mysql-client libmysql-ruby libmysqlclient-dev mysql-client-5.5
 
-RUN gem install bundle
-RUN gem install rails
-RUN gem install mysql2
-RUN gem install rails-api
+#
+# MySql
+#
+RUN apt-get -y install mysql-client-5.5 mysql-server-5.5
 
-RUN mkdir /home/app/
 
 # Decouple webapp from container
 VOLUME ["/webapp"]
 
+ADD start.sh /start.sh
+RUN chmod 755 /start.sh
+
 EXPOSE 3000
 
-ADD start.sh /start.sh
-RUN chmod +x /start.sh
-ENTRYPOINT ["/start.sh"]
+CMD ["/start.sh"]
