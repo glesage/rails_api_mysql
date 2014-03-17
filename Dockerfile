@@ -1,5 +1,5 @@
-# Rails 4 app with Ruby 2.1.1 & NodeJS
-# (+ mysql & Sqlite for adapters)
+# Rails 4 - with Ruby 2.1.1 & NodeJS
+# (+ mysql for adapters)
 #
 # VERSION               0.1
 
@@ -16,10 +16,6 @@ RUN echo mysql-server mysql-server/root_password password root | sudo debconf-se
 RUN echo mysql-server mysql-server/root_password_again password root | sudo debconf-set-selections
 RUN apt-get -y install mysql-server libmysqlclient-dev 
 
-#
-# Sqlite
-#
-RUN apt-get -y install sqlite3 libsqlite3-dev
 
 # Decouple webapp from container
 VOLUME ["/webapp"]
