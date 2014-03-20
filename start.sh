@@ -11,4 +11,5 @@ chown -R www-data $DATADIR
 cd $DATADIR
 
 bundle install
-rails s
+rails s -d
+/bin/bash
